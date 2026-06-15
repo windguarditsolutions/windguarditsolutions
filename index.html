@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>windguard IT Solutions</title>
+    <meta name="description" content="windguard IT Solutions is a leading IT company in Noida offering web development, mobile apps, custom software, SEO services. 10+ years experience. Call now!">
+    <meta name="keywords" content="web development Noida, mobile app development Noida, software company Noida, SEO services Noida, IT company Sector 63">
+    <meta name="author" content="windguard IT Solutions">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/Tab_icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+        <a href="index.html">
+        <img src="img/icon.png" alt="" class="logo-img">
+        <span class="logo-text">windguard IT<span> Solutions</span></span>
+    </a>
+</div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Services/services.html">Services</a></li>
+            <li><a href="Services/product.html">Products</a></li>
+            <li><a href="Services/portfolio.html">Portfolio</a></li>
+            <li><a href="about/contact.html">Contact</a></li>
+            <li><a href="login/login.html" class="btn-login">Sign In</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h2>Welcome to windguard IT Solutions</h2>
+        <p>Get 20% off on your first project. Limited time offer for Indian businesses.</p>
+        <div class="popup-buttons">
+            <button class="btn" onclick="goToServices()">View Services</button>
+            <button class="btn btn-outline" onclick="goToProduct()">View Products</button>
+        </div>
+    </div>
+</div>
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+        <div class="hero-left">
+            <h1>Professional IT Solutions <br>for Your <span class="highlight">Business Growth</span></h1>
+            <p>We deliver high-quality web applications, mobile apps, custom software, and SEO services. 10+ years of experience, 500+ projects delivered for Indian businesses.</p>
+            <div class="hero-buttons">
+                <a href="Services/services.html" class="btn btn-primary">Explore Services <i class="fas fa-arrow-right"></i></a>
+                <a href="about/contact.html" class="btn btn-outline">Get Free Quote</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Support</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="social-icons-hero">
+                <a href="#" target="_blank" class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://linkedin.com/company/windguard IT Solutions" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clients-section">
+    <div class="container">
+        <p class="clients-title">Trusted by 50+ Indian Businesses</p>
+        <div class="clients-grid">
+            <img src="https://img.magnific.com/premium-vector/blue-red-medical-logo-with-red-cross-it_1242616-858.jpg?semt=ais_hybrid&w=740&q=80" alt="healthcare" class="client-logo">
+            <img src="https://img.freepik.com/free-vector/vector-education-logo_779267-2080.jpg" alt="Education" class="client-logo">
+            <img src="https://img.pikbest.com/png-images/ecommerce-logo-vector-graphics-element--e-commerce-logo-icon-design-online-store-logo-icon_1726010.png!sw800" alt="e-commerce" class="client-logo">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/043/211/219/small/a-sleek-and-minimalistic-logo-featuring-a-blue-and-white-house-design-design-a-sleek-and-minimalist-logo-for-a-virtual-event-platform-free-vector.jpg" alt="minimalistic" class="client-logo">
+            <img src="https://img.freepik.com/premium-vector/beauty-logo-design-vector_67715-523.jpg" alt="Beauty" class="client-logo">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="about-section">
+        <div class="about-image">
+            <img src="https://t3.ftcdn.net/jpg/18/58/29/12/360_F_1858291272_nVRhKZ4l8zsVzzGIOjwwmmiyU7KVPtMF.jpg" alt="windguard IT Solutions Office Team in Noida">
+            <div class="experience-badge">
+                <span>10+ Years</span>
+            </div>
+        </div>
+        <div class="about-content">
+            <span class="tag">About Us</span>
+            <h2 class="section-title-left">India's Leading IT Company in Noida</h2>
+            <p>windguard IT<span> Solutions is a premium IT company based in <strong>Noida, Sector 63</strong>, delivering high-quality web and mobile solutions since 2015. We specialize in creating custom software, web applications, mobile apps, and SEO services for Indian businesses, startups, and enterprises.</p>
+            <p>Our team of 30+ experienced developers, designers, and digital marketers work from our Noida office to serve clients across India and globally. We understand the Indian market, local business needs, and deliver solutions that actually work.</p>
+            <div class="about-features">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>100% Indian Team</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Affordable Pricing</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>On-Time Delivery</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Free Lifetime Support</span>
+                </div>
+            </div>
+            <a href="about/about.html" class="btn">Read More About Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+<div class="container services-section">
+    <div class="section-header">
+        <span class="tag">Our Services</span>
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">End-to-end IT solutions for modern businesses</p>
+    </div>
+    <div class="services-grid-detailed">
+    <div class="service-card-detailed">
+        <div class="service-bg" style="background-image: url('https://images.pexels.com/photos/12899188/pexels-photo-12899188.jpeg?cs=srgb&dl=pexels-mizunokozuki-12899188.jpg&fm=jpg');"></div>
+        <div class="service-content">
+            <div class="service-icon">
+                    <img src="https://cdn.pixabay.com/photo/2015/05/19/07/44/browser-773215_1280.png" class="offer-logo">
+            </div>
+            <h3>Web Application Development</h3>
+            <p>We build scalable, secure, and high-performance web applications using modern technologies like React, Angular, Node.js, Python, and PHP.</p>
+            <ul>
+                <li>E-commerce Websites</li>
+                <li>Business Portals & CRM</li>
+                <li>API Development & Integration</li>
+                <li>Cloud-Based Applications</li>
+            </ul>
+            <a href="offer/offer-blog.html" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="service-card-detailed">
+        <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D');"></div>
+        <div class="service-content">
+            <div class="service-icon">
+                <img src="https://taaruff.com/wp-content/uploads/2019/09/icon-ios-android.png" class="offer-logo">
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>Reach your customers on the go with powerful mobile apps for Android and iOS using Flutter, React Native, Kotlin, and Swift.</p>
+            <ul>
+                <li>Android & iOS Apps</li>
+                <li>Hybrid & Cross-Platform</li>
+                <li>App Store Optimization</li>
+                <li>Maintenance & Support</li>
+            </ul>
+            <a href="offer/android-app.html" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="service-card-detailed">
+        <div class="service-bg" style="background-image: url('https://reyyyworks.in/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-07-at-11.05.50-PM.jpeg');"></div>
+        <div class="service-content">
+            <div class="service-icon">
+                <img src="https://png.pngtree.com/png-clipart/20250428/original/pngtree-d-isolated-render-of-an-seo-icon-with-a-high-quality-png-image_20809047.png" class="offer-logo">
+            </div>
+            <h3>SEO & Digital Marketing</h3>
+            <p>Get found on Google! Our SEO experts help you rank higher in search results and drive organic traffic.</p>
+            <ul>
+                <li>Local SEO & Google Maps</li>
+                <li>On-Page & Off-Page SEO</li>
+                <li>Google Ads & Social Media</li>
+                <li>Content Marketing</li>
+            </ul>
+            <a href="offer/SEO.html" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="service-card-detailed">
+        <div class="service-bg" style="background-image: url('https://img.magnific.com/free-vector/web-development-isometric-concept-composition-illustration_1284-55922.jpg?semt=ais_hybrid&w=740&q=80');"></div>
+        <div class="service-content">
+            <div class="service-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/11765/11765112.png" class="offer-logo">
+            </div>
+            <h3>Custom Software Development</h3>
+            <p>Tailor-made software solutions for your unique business needs including inventory, billing, and ERP systems.</p>
+            <ul>
+                <li>Windows Desktop Applications</li>
+                <li>Utility & Productivity Tools</li>
+                <li>Billing & Accounting Software</li>
+                <li>ERP & Business Automation</li>
+            </ul>
+            <a href="offer/software.html" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="why-choose-us">
+    <div class="container">
+        <div class="why-grid-container">
+            <div class="why-content">
+                <span class="tag">Why Choose Us</span>
+                <h2 class="section-title-left">What Makes windguard IT<span> Solutions Different</h2>
+                <p>We don't just write code – we build business solutions that deliver measurable results.</p>
+                <div class="why-list">
+                    <div class="why-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h4>100% Indian Team</h4>
+                            <p>Local team based in Noida who understands Indian business culture.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <div>
+                            <h4>Affordable Pricing</h4>
+                            <p>Best rates for Indian businesses. No hidden costs, transparent pricing.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>On-Time Delivery</h4>
+                            <p>95% projects delivered before or on time with strict quality checks.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h4>24/7 Customer Support</h4>
+                            <p>Call, email, or WhatsApp – we're always available for our clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-image">
+                <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_640.jpg" alt="windguard IT Solutions Team Working">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container portfolio">
+    <div class="section-header">
+        <span class="tag">Our Work</span>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">See what we've built for Indian businesses</p>
+    </div>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="https://img.freepik.com/free-vector/flat-design-responsive-website-design_23-2149483805.jpg" alt="E-commerce Project">
+            <h3>E-commerce Portal</h3>
+            <p>For a Noida-based fashion brand</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://nletschool.com/assets/admin/assets/images/blog/Nlet%20School%20Blog%20Image%20School%20ERP%20vs%20School%20Management%20Software.jpg" alt="School Management ERP">
+            <h3>School Management ERP</h3>
+            <p>For 5 schools in Delhi NCR</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/057/714/229/small/doctor-busy-with-tablet-filling-out-checklist-in-hospital-setting-free-photo.jpeg" alt="Hospital Management">
+            <h3>Hospital Management</h3>
+            <p>For a multi-specialty hospital</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://img.magnific.com/premium-vector/food-delivery-service-illustration-featuring-online-food-ordering-through-mobile-app-fast-delivery-your-preferred-location-background_2175-32101.jpg?semt=ais_hybrid&w=740&q=80" alt="Food Delivery App">
+            <h3>Food Delivery App</h3>
+            <p>For a Noida restaurant chain</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://www.superoffice.com/globalassets/blog/2024/benefits-crm-software/top-banner-benefist-crm.png" alt="CRM Software">
+            <h3>CRM Software</h3>
+            <p>For a B2B service company</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://img.freepik.com/premium-vector/inventory-control-system-concept-professional-manager-checking-goods-stock-supply-inventory-management-with-goods-demand_185038-803.jpg?w=360" alt="Inventory System">
+            <h3>Inventory System</h3>
+            <p>For a manufacturing unit</p>
+        </div>
+    </div>
+    <div class="portfolio-btn">
+        <a href="Services/portfolio.html" class="btn">View All Projects <i class="fas fa-arrow-right"></i></a>
+    </div>
+</div>
+<div class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="tag">Testimonials</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Don't take our word for it - hear from our clients</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p>"windguard IT<span> Solutions built our e-commerce website. Excellent work, on time, and within budget. Highly recommended for Indian businesses looking for quality IT services."</p>
+                <div class="client-info">
+                    <img src="" alt="Client">
+                    <div>
+                        <h4>HarshDeep Singh</h4>
+                        <span>Founder, FashionHub Noida</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p>"Their mobile app development team is fantastic. Our Beauty product delivery app is getting great reviews on Play Store. The team understood our requirements perfectly."</p>
+                <div class="client-info">
+                    <img src="" alt="Client">
+                    <div>
+                        <h4>monika</h4>
+                        <span>Owner, Beauty cave Noida</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p>"Best IT company in Noida. We've been using their custom software for 2 years - zero issues, great support, and very responsive team. Worth every rupee."</p>
+                <div class="client-info">
+                    <img src="" alt="Client">
+                    <div>
+                        <h4>Hammza mirr</h4>
+                        <span>Director, Hammza Industries</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss your requirements. Get a free quote today.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=windguarditsolutions@gmail.com" target="_blank" class="btn btn-outline-white">
+                    <i class="fas fa-envelope"></i> windguarditsolutions@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container blog-section">
+    <div class="section-header">
+        <span class="tag">Our Blog</span>
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-subtitle">Insights from our experts</p>
+    </div>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4E12AQE1ap2nuxNYlA/article-cover_image-shrink_720_1280/B4EZgsP2meGwAM-/0/1753089012833?e=2147483647&v=beta&t=UT7xMMPl7txWnW39agel7__KINBzzPrfsR0YG4KyHGo" alt="Tech Stack Guide">
+            <div class="blog-content">
+                <span class="blog-date">January 9, 2024</span>
+                <h3>How to Choose Right Tech Stack for Your Startup?</h3>
+                <p>A complete guide for Indian startups on choosing between React, Angular, Vue, and more...</p>
+                <a href="about/blog.html" class="btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="blog-card">
+            <img src="https://www.localfalcon.com/uploads/blog-imagery/how-to-do-local-seo-for-home-services-businesses/what-are-the-benefits-of-local-seo-for-home-services-businesses.png" alt="Local SEO Tips">
+            <div class="blog-content">
+                <span class="blog-date">October 26, 2025</span>
+                <h3>Local SEO Tips for Noida Businesses in 2026</h3>
+                <p>Rank number 1 on Google Maps and get more customers from your local area...</p>
+                <a href="#" class="btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="blog-card">
+            <img src="https://twinr.dev/wp-content/uploads/2024/03/3_how_to_create_an_app_from_scratch_in_11_simple_steps.webp" alt="App Development Cost">
+            <div class="blog-content">
+                <span class="blog-date">March 9, 2026</span>
+                <h3>Cost of Developing a Mobile App in India 2026</h3>
+                <p>Complete breakdown of mobile app development costs for Indian businesses...</p>
+                <a href="#" class="btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container faq-section">
+    <div class="section-header">
+        <span class="tag">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Have questions? We have answers</p>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>What is the cost of a website in India?</h3>
+            <p>Basic website starts from ₹5,000, e-commerce from ₹8,000, and custom web applications from ₹10,000. Contact us for exact quote based on your requirements.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How long does it take to build a mobile app?</h3>
+            <p>Simple apps take 1-2 months, complex apps with backend take 2-3 months. We follow agile methodology and provide regular updates.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you provide after-sales support?</h3>
+            <p>Yes. Free support for 1 year. Paid annual maintenance plans available after that which includes bug fixes and updates.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are you located in Noida?</h3>
+            <p>Yes. Our office is at B-45, Sector 63, Noida. You can visit us anytime between 10 AM to 7 PM (prior appointment recommended).</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you work with startups?</h3>
+            <p>Absolutely. We love working with Indian startups. We offer special pricing, flexible payment terms, and mentorship for young entrepreneurs.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What technologies do you use?</h3>
+            <p>React, Angular, Node.js, Python, PHP, Flutter, React Native, Kotlin, Swift, .NET, and many more as per project requirements.</p>
+        </div>
+    </div>
+</div>
+<div class="container contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <span class="tag">Get In Touch</span>
+            <h2 class="section-title-left">Let's Work Together</h2>
+            <p>We're here to help you grow your business with technology. Reach out to us anytime.</p>
+            <div class="address-box">
+                <h3>Our Office Address</h3>
+                <p><i class="fas fa-map-marker-alt"></i> windguard IT<span> Solutions, B-45, 3rd Floor, Sector 63, Noida, Uttar Pradesh - 201301</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:windguarditsolutions@gmail.com">windguarditsolutions@gmail.com</a></p>
+                <p><i class="fas fa-clock"></i> Monday - Saturday: 10:00 AM - 7:00 PM</p>
+            </div>
+            <div class="social-links-footer">  
+                <a href="https://www.linkedin.com/company/windguard-it-solutions/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form-full">
+            <form id="contactForm" onsubmit="return submitContactForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email Address" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select id="service">
+                            <option value="">Select Service</option>
+                            <option>Web Development</option>
+                            <option>Mobile App Development</option>
+                            <option>SEO Services</option>
+                            <option>Custom Software</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>windguard IT<span> Solutions</h4>
+            <p>Professional IT solutions provider in Noida since 2015. We help Indian businesses grow online with cutting-edge technology.</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/windguard-it-solutions/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="Services/services.html">Services</a>
+            <a href="Services/product.html">Products</a>
+            <a href="Services/portfolio.html">Portfolio</a>
+            <a href="about/contact.html">Contact</a>
+            <a href="about/blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+            <h4>Our Services</h4>
+            <a href="web-app.html">Web Development</a>
+            <a href="mobile-app.html">Mobile Apps</a>
+            <a href="seo.html">SEO Services</a>
+            <a href="custom-software.html">Custom Software</a>
+            <a href="windows-software.html">Windows Software</a>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="Services/privacy.html">Privacy Policy</a>
+            <a href="privacy/terms.html">Terms & Conditions</a>
+            <a href="refund.html">Refund Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-map-marker-alt"></i> B-45, Sector 63, Noida</p>
+            <p><i class="fas fa-envelope"></i> windguarditsolutions@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-7PM</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 windguard IT<span> Solutions. All rights reserved. Designed with care in Noida, India.</p>
+    </div>
+</footer>
+</body>
+</html>
