@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - windguard IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/other.css">
+    <link rel="icon" type="image/png" href="../img/Tab_icon.png">
+    <script src="../js/otherscript.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+        <img src="../img/icon.png" alt="windguard IT Solutions" class="logo-img">
+        <span class="logo-text">windguard IT<span> Solutions</span></span>
+    </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+           <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/services.html">Services</a></li>
+            <li><a href="../Services/product.html">Products</a></li>
+            <li><a href="../Services/portfolio.html">Portfolio</a></li>
+            <li><a href="../about/contact.html">Contact</a></li>
+            <li><a href="../login/login.html" class="btn-login">Sign In</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-container">
+        <h1>Our Portfolio</h1>
+        <p>See what we've built for Indian businesses</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+    </div>
+
+    <div class="portfolio-full-grid">
+        <div class="portfolio-full-item" data-category="web">
+            <img src="https://www.zauca.com/wp-content/uploads/Fashion-Accessories-Website-Designing-Company-E-Commerce-Site.jpg" alt="E-commerce Website">
+            <div class="portfolio-overlay">
+                <h3>FashionHub E-commerce</h3>
+                <p>Complete e-commerce website for a Noida-based fashion brand with 10,000+ products.</p>
+                <span class="portfolio-tag">Web Development</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="mobile">
+            <img src="https://img.magnific.com/premium-vector/food-delivery-service-illustration-featuring-online-food-ordering-through-mobile-app-fast-delivery-your-preferred-location-background_2175-32101.jpg?semt=ais_hybrid&w=740&q=80" alt="Food Delivery App">
+            <div class="portfolio-overlay">
+                <h3>FoodCart Delivery App</h3>
+                <p>Food delivery mobile app for a Delhi restaurant chain with live tracking.</p>
+                <span class="portfolio-tag">Mobile App</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="software">
+            <img src="https://www.superoffice.com/globalassets/blog/2024/benefits-crm-software/top-banner-benefist-crm.png" alt="CRM Software">
+            <div class="portfolio-overlay">
+                <h3>Sales CRM Platform</h3>
+                <p>Custom CRM software for a B2B service company with 500+ users.</p>
+                <span class="portfolio-tag">Software</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="web">
+            <img src="https://nletschool.com/assets/admin/assets/images/blog/Nlet%20School%20Blog%20Image%20School%20ERP%20vs%20School%20Management%20Software.jpg" alt="School Management">
+            <div class="portfolio-overlay">
+                <h3>School Management ERP</h3>
+                <p>Complete school management system used by 5 schools in Delhi NCR.</p>
+                <span class="portfolio-tag">Web Development</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="mobile">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/057/714/229/small/doctor-busy-with-tablet-filling-out-checklist-in-hospital-setting-free-photo.jpeg" alt="Health App">
+            <div class="portfolio-overlay">
+                <h3>HealthCare Plus App</h3>
+                <p>Doctor appointment booking and telemedicine mobile application.</p>
+                <span class="portfolio-tag">Mobile App</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="software">
+            <img src="https://thumbs.dreamstime.com/b/inventory-management-words-white-paper-against-background-table-numbers-calculator-banknotes-inventory-215015659.jpg" alt="Inventory System">
+            <div class="portfolio-overlay">
+                <h3>Inventory Management</h3>
+                <p>Windows-based inventory software for a manufacturing unit.</p>
+                <span class="portfolio-tag">Software</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="web">
+            <img src="https://pvsbuilders.com/wp-content/uploads/2019/10/Working-of-Real-Estate-Portals.png" alt="Real Estate Portal">
+            <div class="portfolio-overlay">
+                <h3>Real Estate Portal</h3>
+                <p>Property listing and search portal for Noida real estate agency.</p>
+                <span class="portfolio-tag">Web Development</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="mobile">
+            <img src="https://img.freepik.com/premium-vector/abstract-people-logo-sport-fit-health-vector-design-concept_272489-1334.jpg?semt=ais_hybrid&w=740&q=80" alt="Fitness App">
+            <div class="portfolio-overlay">
+                <h3>FitLife Fitness App</h3>
+                <p>Workout tracking and diet planning mobile application.</p>
+                <span class="portfolio-tag">Mobile App</span>
+            </div>
+        </div>
+
+        <div class="portfolio-full-item" data-category="software">
+            <img src="https://nextgentemplates.com/wp-content/uploads/2025/02/GST-Billing-Software-V1.0-3.jpg" alt="Billing Software">
+            <div class="portfolio-overlay">
+                <h3>GST Billing Software</h3>
+                <p>Windows-based billing software for a retail chain with 20+ stores.</p>
+                <span class="portfolio-tag">Software</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Have a Project in Mind?</h2>
+            <p>Let's create something amazing together.</p>
+            <a href="../about/contact.html" class="btn btn-primary">Start Your Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>windguard IT<span> Solutions</h4>
+            <p>Professional IT solutions provider in Noida since 2015.</p>
+            <div class="footer-social">
+                
+                <a href="https://www.linkedin.com/company/windguard-it-solutions/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+           <a href="../index.html">Home</a>
+            <a href="../Services/services.html">Services</a>
+            <a href="../Services/product.html">Products</a>
+            <a href="../Services/portfolio.html">Portfolio</a>
+            <a href="../about/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="../Services/privacy.html">Privacy Policy</a>
+            <a href="../privacy/terms.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-map-marker-alt"></i> B-45, Sector 63, Noida</p>
+           
+            <p><i class="fas fa-envelope"></i> windguarditsolutions@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 windguard IT<span> Solutions. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
