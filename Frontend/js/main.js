@@ -1,13 +1,31 @@
 // ============================================================
-// WINDGUARD FRONTEND
-// API -> BACKEND -> database.js
+// WINDGUARD IT SOLUTIONS - FRONTEND
+// FRONTEND -> main.js -> RENDER API -> database.js
 // ============================================================
 
-// LOCALHOST
-const API_BASE_URL = "http://localhost:5000";
 
-// RENDER par later:
-// const API_BASE_URL = "https://your-backend.onrender.com";
+// ============================================================
+// CONFIGURATION
+// ============================================================
+
+const API_BASE_URL = "https://windguarditsolutions.onrender.com";
+
+// Frontend ka Home.
+// Localhost par:
+// http://localhost:5500/Frontend/index.html
+//
+// Vercel par:
+// automatically current frontend origin/index.html use hoga.
+const FRONTEND_HOME_URL = new URL(
+    "./index.html",
+    window.location.href
+).href;
+
+
+// EmailJS
+const EMAILJS_PUBLIC_KEY = "cjp8whkFsfFhyxzeg";
+const EMAILJS_SERVICE_ID = "service_5vvb0o8";
+const EMAILJS_TEMPLATE_ID = "template_d13onqp";
 
 
 // ============================================================
@@ -29,34 +47,33 @@ function isExternalUrl(value) {
 function backendUrl(value) {
 
     if (!value) {
-        return "";
+        return "#";
     }
 
     let url = String(value).trim();
 
+    // # / mailto / tel / external URL ko same rakho
     if (isExternalUrl(url)) {
         return url;
     }
 
-    // ../../Backend/img/icon.png
+    // Backend relative path clean karo
+
     url = url.replace(
         /^(?:\.\.\/)+Backend\//i,
         ""
     );
 
-    // ../Backend/...
     url = url.replace(
         /^Backend\//i,
         ""
     );
 
-    // ./xxx
     url = url.replace(
         /^(?:\.\.\/|\.\/)+/,
         ""
     );
 
-    // /img/icon.png
     url = url.replace(
         /^\/+/,
         ""
@@ -83,12 +100,15 @@ function resolveUrl(value) {
 
 
 // ============================================================
-// SAFE HTML HELPERS
+// SAFE HTML
 // ============================================================
 
 function escapeHtml(value) {
 
-    if (value === null || value === undefined) {
+    if (
+        value === null ||
+        value === undefined
+    ) {
         return "";
     }
 
@@ -102,21 +122,23 @@ function escapeHtml(value) {
 
 
 // ============================================================
-// LOAD WEBSITE
+// LOAD WEBSITE DATA FROM RENDER
 // ============================================================
 
 async function loadWebsiteData() {
 
     try {
 
+        const apiUrl =
+            `${API_BASE_URL}/api/website-data`;
+
         console.log(
-            "Loading website data from:",
-            `${API_BASE_URL}/api/website-data`
+            "Connecting to Windguard Backend API..."
         );
 
 
         const response = await fetch(
-            `${API_BASE_URL}/api/website-data`,
+            apiUrl,
             {
                 method: "GET",
                 headers: {
@@ -139,15 +161,19 @@ async function loadWebsiteData() {
             await response.json();
 
 
-        // Backend sends:
-        //
-        // {
-        //   success: true,
-        //   data: {...}
-        // }
+        if (
+            !payload ||
+            payload.success === false
+        ) {
+
+            throw new Error(
+                payload?.message ||
+                "Backend API returned an error."
+            );
+        }
+
 
         const db =
-            payload &&
             payload.data &&
             typeof payload.data === "object"
                 ? payload.data
@@ -160,17 +186,19 @@ async function loadWebsiteData() {
         ) {
 
             throw new Error(
-                "Invalid database data."
+                "Invalid website data received."
             );
         }
 
 
         console.log(
-            "Website API connected successfully."
+            "Windguard Backend API connected successfully."
         );
 
 
-        // Render everything
+        // ----------------------------------------------------
+        // RENDER WEBSITE
+        // ----------------------------------------------------
 
         renderMeta(db);
 
@@ -205,7 +233,9 @@ async function loadWebsiteData() {
         renderFooter(db);
 
 
-        // Animations after dynamic HTML
+        // ----------------------------------------------------
+        // ANIMATIONS
+        // ----------------------------------------------------
 
         initScrollAnimations();
 
@@ -229,7 +259,7 @@ async function loadWebsiteData() {
         if (heroDesc) {
 
             heroDesc.innerText =
-                "Backend API se website data load nahi ho pa raha.";
+                "Website data load nahi ho pa raha. Please try again.";
         }
     }
 }
@@ -298,7 +328,10 @@ function renderMeta(db) {
             "favIcon"
         );
 
-    if (favicon) {
+    if (
+        favicon &&
+        db.meta.favicon
+    ) {
 
         favicon.href =
             resolveUrl(
@@ -368,8 +401,10 @@ function renderLogo(db) {
 
     if (logoLink) {
 
+        // Logo frontend homepage par jayega.
+        // Backend JSON par nahi.
         logoLink.href =
-            `${API_BASE_URL}/`;
+            FRONTEND_HOME_URL;
     }
 }
 
@@ -388,7 +423,9 @@ function renderNavbar(db) {
 
     if (
         !nav ||
-        !Array.isArray(db.navLinks)
+        !Array.isArray(
+            db.navLinks
+        )
     ) {
 
         return;
@@ -415,7 +452,9 @@ function renderNavbar(db) {
                                     : ""
                             }"
                         >
-                            ${escapeHtml(link.text)}
+                            ${escapeHtml(
+                                link.text
+                            )}
                         </a>
                     </li>
                 `;
@@ -480,7 +519,7 @@ function renderPopup(db) {
                 .map(
                     (button, index) => {
 
-                        let action =
+                        const action =
                             button.action || "";
 
 
@@ -491,7 +530,9 @@ function renderPopup(db) {
                                         ? "btn-outline"
                                         : ""
                                 }"
-                                onclick="${action}"
+                                onclick="${escapeHtml(
+                                    action
+                                )}"
                             >
                                 ${escapeHtml(
                                     button.text
@@ -501,6 +542,48 @@ function renderPopup(db) {
                     }
                 )
                 .join("");
+    }
+
+
+    // Popup homepage par hi show hoga
+    const currentPath =
+        window.location.pathname;
+
+    const isHomepage =
+        currentPath.endsWith(
+            "/index.html"
+        ) ||
+        currentPath === "/" ||
+        currentPath === "";
+
+
+    if (isHomepage) {
+
+        if (
+            !sessionStorage.getItem(
+                "popupShown"
+            )
+        ) {
+
+            setTimeout(() => {
+
+                const popup =
+                    document.getElementById(
+                        "popup"
+                    );
+
+                if (popup) {
+                    popup.style.display =
+                        "flex";
+                }
+
+            }, 1500);
+
+            sessionStorage.setItem(
+                "popupShown",
+                "true"
+            );
+        }
     }
 }
 
@@ -546,9 +629,9 @@ function renderHero(db) {
         );
 
 
+    // Hero title intentionally allows HTML
     if (heroTitle) {
 
-        // Database intentionally supports HTML here.
         heroTitle.innerHTML =
             db.hero.title || "";
     }
@@ -593,9 +676,9 @@ function renderHero(db) {
                                 button.icon
                                     ? `
                                         <i
-                                            class="${
+                                            class="${escapeHtml(
                                                 button.icon
-                                            }"
+                                            )}"
                                         ></i>
                                     `
                                     : ""
@@ -640,7 +723,6 @@ function renderHero(db) {
 
                             const number =
                                 match[1];
-
 
                             const suffix =
                                 match[2];
@@ -706,7 +788,7 @@ function renderHero(db) {
 
 
     // --------------------------------------------------------
-    // SOCIALS
+    // HERO SOCIALS
     // --------------------------------------------------------
 
     if (
@@ -736,9 +818,9 @@ function renderHero(db) {
                         >
 
                             <i
-                                class="${
+                                class="${escapeHtml(
                                     social.icon || ""
-                                }"
+                                )}"
                             ></i>
 
                             <span>
@@ -754,10 +836,6 @@ function renderHero(db) {
                 .join("");
     }
 
-
-    // --------------------------------------------------------
-    // HERO VIDEO
-    // --------------------------------------------------------
 
     renderHeroVideo(
         db.hero
@@ -836,9 +914,7 @@ function renderHeroVideo(hero) {
 
 
     video.muted = true;
-
     video.loop = true;
-
     video.playsInline = true;
 
 
@@ -847,7 +923,8 @@ function renderHeroVideo(hero) {
         () => {
 
             if (
-                hero.isVideoPlaying !== false
+                hero.isVideoPlaying !==
+                false
             ) {
 
                 video.play()
@@ -914,10 +991,9 @@ function renderHeroVideo(hero) {
     );
 
 
-    // Browser usually allows muted autoplay
-
     if (
-        hero.isVideoPlaying !== false
+        hero.isVideoPlaying !==
+        false
     ) {
 
         const promise =
@@ -926,7 +1002,8 @@ function renderHeroVideo(hero) {
 
         if (
             promise &&
-            typeof promise.catch === "function"
+            typeof promise.catch ===
+                "function"
         ) {
 
             promise.catch(() => {});
@@ -1087,6 +1164,8 @@ function renderAbout(db) {
         )
     ) {
 
+        // Database mein paragraphs ke andar
+        // <strong> intentionally allowed hai.
         text.innerHTML =
             db.about.paragraphs
                 .map(
@@ -1385,7 +1464,9 @@ function renderWhyChooseUs(db) {
                         <div class="why-item scroll-reveal">
 
                             <i
-                                class="${item.icon || ""}"
+                                class="${escapeHtml(
+                                    item.icon || ""
+                                )}"
                             ></i>
 
 
@@ -1653,9 +1734,12 @@ function renderTestimonials(db) {
                                 ${
                                     '<i class="fas fa-star"></i>'
                                         .repeat(
-                                            Number(
-                                                item.stars
-                                            ) || 0
+                                            Math.max(
+                                                0,
+                                                Number(
+                                                    item.stars
+                                                ) || 0
+                                            )
                                         )
                                 }
 
@@ -1737,6 +1821,7 @@ function renderCTA(db) {
             </a>
 
         </div>
+
     `;
 }
 
@@ -2095,9 +2180,9 @@ function renderContact(db) {
                         >
 
                             <i
-                                class="${
+                                class="${escapeHtml(
                                     social.icon || ""
-                                }"
+                                )}"
                             ></i>
 
                         </a>
@@ -2123,6 +2208,7 @@ function renderContact(db) {
             db.contact.services
                 .map(
                     service => `
+
                         <option
                             value="${escapeHtml(
                                 service
@@ -2132,6 +2218,7 @@ function renderContact(db) {
                                 service
                             )}
                         </option>
+
                     `
                 )
                 .join("");
@@ -2177,9 +2264,9 @@ function renderFooter(db) {
                             >
 
                                 <i
-                                    class="${
+                                    class="${escapeHtml(
                                         social.icon || ""
-                                    }"
+                                    )}"
                                 ></i>
 
                             </a>
@@ -2315,6 +2402,7 @@ function renderFooter(db) {
             <p>
 
                 &copy; 2026
+
                 ${escapeHtml(
                     db.companyName || ""
                 )}
@@ -2405,6 +2493,8 @@ function updateVideoButton(video) {
 
     if (text) {
 
+        // Existing design ke according
+        // text hide rakha gaya hai.
         text.style.display =
             "none";
     }
@@ -2463,7 +2553,7 @@ function toggleHeroVideo() {
 
 
 // ============================================================
-// COUNTER
+// COUNTER ANIMATION
 // ============================================================
 
 function animateCounter(element) {
@@ -2480,7 +2570,8 @@ function animateCounter(element) {
 
 
     const suffix =
-        element.dataset.suffix || "";
+        element.dataset.suffix ||
+        "";
 
 
     if (
@@ -2570,7 +2661,10 @@ function initCounterAnimations() {
 
 
     if (
-        !("IntersectionObserver" in window)
+        !(
+            "IntersectionObserver"
+            in window
+        )
     ) {
 
         counters.forEach(
@@ -2604,7 +2698,8 @@ function initCounterAnimations() {
 
 
                         if (
-                            counter.dataset.animated ===
+                            counter.dataset
+                                .animated ===
                             "true"
                         ) {
 
@@ -2612,7 +2707,8 @@ function initCounterAnimations() {
                         }
 
 
-                        counter.dataset.animated =
+                        counter.dataset
+                            .animated =
                             "true";
 
 
@@ -2720,7 +2816,10 @@ function initScrollAnimations() {
 
 
     if (
-        !("IntersectionObserver" in window)
+        !(
+            "IntersectionObserver"
+            in window
+        )
     ) {
 
         items.forEach(
@@ -2759,8 +2858,10 @@ function initScrollAnimations() {
             },
             {
                 root: null,
+
                 rootMargin:
                     "0px 0px -60px 0px",
+
                 threshold: 0.1
             }
         );
@@ -2799,7 +2900,7 @@ function toggleMenu() {
 
 
 // ============================================================
-// POPUP CLOSE
+// CLOSE POPUP
 // ============================================================
 
 function closePopup() {
@@ -2846,7 +2947,9 @@ function goToProduct() {
 
 async function submitContactForm(event) {
 
-    event.preventDefault();
+    if (event) {
+        event.preventDefault();
+    }
 
 
     const submitBtn =
@@ -2915,7 +3018,7 @@ async function submitContactForm(event) {
     try {
 
         // ----------------------------------------------------
-        // BACKEND CONTACT API
+        // SEND CONTACT DATA TO BACKEND
         // ----------------------------------------------------
 
         const response =
@@ -2932,26 +3035,36 @@ async function submitContactForm(event) {
                             "application/json"
                     },
 
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        phone,
-                        service,
-                        message
-                    })
+                    body:
+                        JSON.stringify({
+                            name,
+                            email,
+                            phone,
+                            service,
+                            message
+                        })
                 }
             );
 
 
-        const result =
-            await response.json();
+        let result;
+
+        try {
+
+            result =
+                await response.json();
+
+        } catch {
+
+            result = {};
+        }
 
 
         if (!response.ok) {
 
             throw new Error(
                 result.message ||
-                "Contact API failed."
+                `Contact API Error: ${response.status}`
             );
         }
 
@@ -2966,11 +3079,8 @@ async function submitContactForm(event) {
         ) {
 
             await emailjs.send(
-
-                "service_5vvb0o8",
-
-                "template_d13onqp",
-
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
                 {
                     name,
                     email,
@@ -2985,10 +3095,15 @@ async function submitContactForm(event) {
         // ----------------------------------------------------
         // SUCCESS
         // ----------------------------------------------------
+        //
+        // IMPORTANT:
+        // Backend page ka exact filename:
+        // feedback/thankyou.html
+        //
 
         window.location.href =
             backendUrl(
-                "feedback/thank-you.html"
+                "feedback/thankyou.html"
             );
 
 
@@ -3032,7 +3147,7 @@ function initializeEmailJS() {
     ) {
 
         emailjs.init(
-            "cjp8whkFsfFhyxzeg"
+            EMAILJS_PUBLIC_KEY
         );
 
     } else {
@@ -3041,6 +3156,44 @@ function initializeEmailJS() {
             "EmailJS library load nahi hui."
         );
     }
+}
+
+
+// ============================================================
+// CLOSE MOBILE MENU WHEN LINK CLICKED
+// ============================================================
+
+function initializeNavigationEvents() {
+
+    const nav =
+        document.getElementById(
+            "navLinks"
+        );
+
+
+    if (!nav) {
+        return;
+    }
+
+
+    nav.addEventListener(
+        "click",
+        event => {
+
+            const link =
+                event.target.closest(
+                    "a"
+                );
+
+
+            if (link) {
+
+                nav.classList.remove(
+                    "active"
+                );
+            }
+        }
+    );
 }
 
 
@@ -3054,36 +3207,9 @@ document.addEventListener(
 
         initializeEmailJS();
 
+        initializeNavigationEvents();
+
         loadWebsiteData();
-
-
-        const nav =
-            document.getElementById(
-                "navLinks"
-            );
-
-
-        if (nav) {
-
-            nav.addEventListener(
-                "click",
-                event => {
-
-                    const link =
-                        event.target.closest(
-                            "a"
-                        );
-
-
-                    if (link) {
-
-                        nav.classList.remove(
-                            "active"
-                        );
-                    }
-                }
-            );
-        }
 
     }
 );
