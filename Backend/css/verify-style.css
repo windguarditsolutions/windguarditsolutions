@@ -1,0 +1,412 @@
+/* Color Palette matching your official logo and website */
+:root {
+    --core-dark: #0f172a;
+    --brand-primary: #1d4ed8; 
+    --brand-light-blue: #2563eb;
+    --brand-accent-red: #d32f2f;
+    --bg-main: #fafafa;
+    --pure-white: #ffffff;
+    --text-slate: #334155;
+    --text-muted: #64748b;
+    --border-grey: #e2e8f0;
+    --success-green: #16a34a;
+    --danger-red: #dc2626;
+    --shadow-premium: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 8px -1px rgba(0, 0, 0, 0.03);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-main);
+    margin: 0;
+    padding: 0;
+    color: var(--text-slate);
+}
+
+/* Header layout matching your index page screenshot completely */
+.site-header {
+    background-color: var(--pure-white);
+    border-bottom: 1px solid var(--border-grey);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.brand-text-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: rgb(175, 12, 12);
+    letter-spacing: -0.3px;
+    text-transform: none;
+}
+
+/* Red Highlight on "IT Solutions" matched to your logo image */
+.brand-text-main .accent-text {
+    color: var(--brand-accent-red);
+}
+
+.navigation-menu {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-slate);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.nav-item:hover {
+    color: var(--brand-light-blue);
+}
+
+/* Sign In Button matched with index.html design */
+.action-btn-signin {
+    background-color: var(--brand-light-blue);
+    color: var(--pure-white);
+    text-decoration: none;
+    padding: 0.55rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    transition: all 0.15s ease;
+}
+
+.action-btn-signin:hover {
+    background-color: var(--brand-primary);
+}
+
+/* Main Area */
+.viewport-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5rem 1.5rem;
+    min-height: calc(100vh - 80px);
+    box-sizing: border-box;
+}
+
+.verification-container {
+    max-width: 960px; /* Kept wide for horizontal side-by-side inputs layout */
+    width: 100%;
+}
+
+.section-title-box {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title-box h2 {
+    color: var(--core-dark);
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.section-title-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 8px 0 0 0;
+}
+
+/* Changed Form layout to horizontal side-by-side grid template */
+.professional-grid-form {
+    background-color: var(--pure-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forms sit side-by-side */
+    gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .form-row-grid {
+        grid-template-columns: 1fr; /* Mobile fallback to ensure readability */
+    }
+    .navigation-menu, .header-actions {
+        display: none; /* Hide header menus on mobile responsive viewports */
+    }
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-container label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-slate);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.input-inner-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-grey);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--core-dark);
+    background-color: #fafbfd;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-inner-wrapper input:focus {
+    border-color: var(--brand-light-blue);
+    background-color: var(--pure-white);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* Centered Button Row */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.btn-verify-action {
+    background-color: var(--brand-light-blue);
+    color: var(--pure-white);
+    border: none;
+    padding: 0.85rem 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transition: all 0.15s ease;
+}
+
+.btn-verify-action:hover {
+    background-color: var(--brand-primary);
+}
+
+.btn-verify-action:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Output Layout (Keep it neat and centered below the form) */
+.status-output-panel {
+    margin-top: 2rem;
+    background-color: var(--pure-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-premium);
+    text-align: center;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modern Linear Progress Indicator */
+.loader-linear-system {
+    margin: 1rem 0;
+}
+
+.infinite-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.infinite-progress-bar::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background-color: var(--brand-light-blue);
+    border-radius: 9999px;
+    animation: flowProgress 1.4s infinite linear;
+}
+
+@keyframes flowProgress {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}
+
+.loader-linear-system p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.status-alert-heading {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.status-alert-heading.text-success { color: var(--success-green); }
+.status-alert-heading.text-danger { color: var(--danger-red); }
+
+/* Verified Employee Profile Card */
+.verified-profile-card {
+    border: 1px solid var(--border-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.profile-header {
+    background-color: #f8fafc;
+    border-bottom: 1px solid var(--border-grey);
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-header h4 {
+    margin: 0;
+    color: var(--core-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.system-status-indicator {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--brand-light-blue);
+    background-color: #eff6ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.profile-matrix-rows {
+    padding: 0.5rem 1.25rem;
+}
+
+.matrix-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--border-grey);
+    font-size: 0.88rem;
+}
+
+.matrix-row:last-child {
+    border-bottom: none;
+}
+
+.column-name {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.column-val {
+    color: var(--text-slate);
+    font-weight: 600;
+}
+
+.column-val.value-bold {
+    font-weight: 700;
+    color: var(--core-dark);
+}
+
+.active-badge-pill {
+    background-color: #dcfce7;
+    color: var(--success-green);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.hidden { display: none !important; }
+
+/* Pure CSS Tick Animation */
+.checkmark-animation-box {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+}
+
+.checkmark-circle-outline {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--success-green);
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.draw-checkmark-kick {
+    width: 12px;
+    height: 3px;
+    background-color: var(--success-green);
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    transform: rotate(45deg);
+    transform-origin: left;
+    animation: renderKick 0.2s ease-out forwards;
+}
+
+.draw-checkmark-stem {
+    width: 24px;
+    height: 3px;
+    background-color: var(--success-green);
+    position: absolute;
+    top: 32px;
+    left: 23px;
+    transform: rotate(-45deg);
+    transform-origin: left;
+    animation: renderStem 0.2s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes renderKick {
+    0% { width: 0; }
+    100% { width: 12px; }
+}
+
+@keyframes renderStem {
+    0% { width: 0; opacity: 1; }
+    100% { width: 24px; opacity: 1; }
+}

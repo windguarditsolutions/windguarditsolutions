@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Portal | Windguard IT Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/verify-style.css">
+    <script src="../js/verify-engine.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-identity">
+                <img src="../img/icon.png" class="brand-logo-img" alt="WG Logo">
+                <span class="brand-text-main">windguard IT Solutions</span>
+            </div>
+            <nav class="navigation-menu">
+                <a href="../../Frontend/index.html" class="nav-item">Home</a>
+                <a href="../Services/services.html" class="nav-item">Services</a>
+                <a href="../Services/product.html" class="nav-item">Products</a>
+                <a href="../Services/portfolio.html" class="nav-item">Portfolio</a>
+                <a href="../about/contact.html" class="nav-item">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../Frontend/index.html" class="action-btn-signin">Sign In</a>
+            </div>
+        </div>
+    </header>
+    <main class="viewport-main">
+        <div class="verification-container">
+            <div class="section-title-box">
+                <h2>Employee Verification</h2>
+                <p>Verify credentials and current system track record instantly</p>
+            </div>
+            <form id="verificationForm" class="professional-grid-form">
+                <div class="form-row-grid">
+                    <div class="field-container">
+                        <label for="empId">Employee ID / Intern ID</label>
+                        <div class="input-inner-wrapper">
+                            <input type="text" id="empId" placeholder="e.g. WG-INT-2026" required autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field-container">
+                        <label for="empName">Full Registered Name</label>
+                        <div class="input-inner-wrapper">
+                            <input type="text" id="empName" placeholder="e.g. Rahul Sharma" required autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field-container">
+                        <label for="empRole">Designation / Track</label>
+                        <div class="input-inner-wrapper">
+                            <select id="empRole" required>
+                                 <option value="" disabled selected hidden>Choose a role...</option>
+                                 <optgroup label="Software Development">
+                                    <option value="frontend-developer">Frontend Developer</option>
+                                    <option value="backend-developer">Backend Developer</option>
+                                    <option value="fullstack-developer">Full-Stack Developer</option>
+                                    <option value="mobile-app-developer">Mobile App Developer</option>
+                                </optgroup>
+                                <optgroup label="Data & AI">
+                                    <option value="data-scientist">Data Scientist</option>
+                                    <option value="data-analyst">Data Analyst</option>
+                                    <option value="ai-ml-engineer">AI/ML Engineer</option>
+                                </optgroup>
+                                <optgroup label="Design & UX">
+                                    <option value="ui-ux-designer">UI/UX Designer</option>
+                                    <option value="product-designer">Product Designer</option>
+                                </optgroup>
+                                <optgroup label="Management & QA">
+                                    <option value="product-manager">Product Manager</option>
+                                    <option value="qa-engineer">QA/Testing Engineer</option>
+                                    <option value="devops-engineer">DevOps Engineer</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" id="btnVerify" class="btn-verify-action">
+                        Verify Identity
+                    </button>
+                </div>
+            </form>
+            <div id="statusWrapper" class="status-output-panel hidden">
+                <div id="loadingSpinner" class="loader-linear-system hidden">
+                    <div class="infinite-progress-bar"></div>
+                    <p>Consulting secure database architecture...</p>
+                </div>
+                <div id="successAnimation" class="checkmark-animation-box hidden">
+                    <div class="checkmark-circle-outline">
+                        <div class="draw-checkmark-kick"></div>
+                        <div class="draw-checkmark-stem"></div>
+                    </div>
+                </div>
+                <div id="statusMessage" class="status-alert-heading"></div>
+                    <div class="profile-header">
+                        <h4>Verified Employee Profile</h4>
+                        <span class="system-status-indicator">SECURE DATABASE</span>
+                    </div>
+                    <div class="profile-matrix-rows">
+                        <div class="matrix-row">
+                            <span class="column-name">Employee ID</span>
+                            <span id="lblId" class="column-val value-bold"></span>
+                        </div>
+                        <div class="matrix-row">
+                            <span class="column-name">Legal Full Name</span>
+                            <span id="lblName" class="column-val"></span>
+                        </div>
+                        <div class="matrix-row">
+                            <span class="column-name">Technology Track</span>
+                            <span id="lblRole" class="column-val"></span>
+                        </div>
+                        <div class="matrix-row">
+                            <span class="column-name">Date of Joining</span>
+                            <span id="lblDate" class="column-val"></span>
+                        </div>
+                        <div class="matrix-row">
+                            <span class="column-name">Current Status</span>
+                            <span id="lblStatus" class="active-badge-pill"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Internship Guidelines | Windguard IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../js/guide-engine.js" defer></script>
+    <link rel="stylesheet" href="../css/intrn.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="hookMainHeader"></div>
+        
+        <div class="guide-box" id="pdfPrintArea">
+            <div id="hookMetaHeader"></div>
+            <div id="hookMetricsGrid" class="metrics-grid"></div>
+            
+            <div class="section-heading"><i class="fas fa-project-diagram"></i> 6-Step Selection & Verification Pipeline</div>
+            <div id="hookStepsContainer" class="steps-container"></div>
+            
+            <div class="section-heading"><i class="fas fa-table"></i> Core Engineering Domain Task Matrix</div>
+            <div class="table-scroller">
+                <table class="matrix-data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Specialization Domain Track</th>
+                            <th>Operational Work Framework & Project Scope</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hookTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="hookControlPanel" class="control-panel"></div>
+    </div>
+
+    <script src="guide-engine.js"></script>
+</body>
+</html>

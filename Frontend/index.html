@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title id="metaTitle">windguard IT Solutions</title>
+    <meta name="description" id="metaDesc" content="windguard IT Solutions">
+    <meta name="keywords" id="metaKeywords" content="windguard IT Solutions">
+    <meta name="author" id="metaAuthor" content="windguard IT Solutions">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" id="favIcon" href="../Backend/img/tab_icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="../Backend/js/database.js" defer></script> -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a id="logoLink" href="../Frontend/index.html">
+                <img id="logoImg" src="../Backend/img/icon.png" alt="logo" class="logo-img">
+                <span id="logoText" class="logo-text"></span>
+            </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks"></ul>
+    </nav>
+</header>
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h2 id="popupTitle"></h2>
+        <p id="popupDesc"></p>
+        <div class="popup-buttons" id="popupBtns"></div>
+    </div>
+</div>
+<section class="hero" id="hero">
+    <div class="hero-video-wrapper" id="heroVideoWrapper"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+        <div class="hero-left">
+            <h1 id="heroTitle"></h1>
+            <p id="heroDesc"></p>
+            <div class="hero-buttons" id="heroBtns"></div>
+            <button id="videoToggleBtn" class="btn-video-toggle" onclick="toggleHeroVideo()" aria-label="Toggle Video">
+                <i class="fas fa-pause" id="videoToggleIcon"></i> <span id="videoToggleText">Pause Video</span>
+            </button>
+            <div class="hero-stats" id="heroStats"></div>
+        </div>
+        <div class="hero-right">
+            <div class="social-icons-hero" id="heroSocials"></div>
+        </div>
+    </div>
+</section>
+<div class="clients-section">
+    <div class="container">
+        <p class="clients-title" id="clientsTitle"></p>
+        <div class="clients-grid" id="clientsGrid"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="about-section">
+        <div class="about-image">
+            <img id="aboutImg" src="" alt="">
+            <div class="experience-badge">
+                <span id="aboutBadge"></span>
+            </div>
+        </div>
+        <div class="about-content">
+            <span class="tag" id="aboutTag"></span>
+            <h2 class="section-title-left" id="aboutTitle"></h2>
+            <div id="aboutText"></div>
+            <div class="about-features" id="aboutFeatures"></div>
+            <a id="aboutBtn" href="" class="btn"></a>
+        </div>
+    </div>
+</div>
+<div class="container services-section">
+    <div class="section-header" id="servicesHeader"></div>
+    <div class="services-grid-detailed" id="servicesGrid"></div>
+</div>
+<div class="why-choose-us">
+    <div class="container">
+        <div class="why-grid-container">
+            <div class="why-content">
+                <span class="tag" id="whyTag"></span>
+                <h2 class="section-title-left" id="whyTitle"></h2>
+                <p id="whyDesc"></p>
+                <div class="why-list" id="whyList"></div>
+            </div>
+            <div class="why-image">
+                <img id="whyImg" src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container portfolio">
+    <div class="section-header" id="portfolioHeader"></div>
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+    <div class="portfolio-btn">
+        <a id="portfolioAllBtn" href="" class="btn"></a>
+    </div>
+</div>
+<div class="testimonials-section">
+    <div class="container">
+        <div class="section-header" id="testimonialHeader"></div>
+        <div class="testimonial-grid" id="testimonialGrid"></div>
+    </div>
+</div>
+<div class="cta-section">
+    <div class="container">
+        <div class="cta-content" id="ctaContent"></div>
+    </div>
+</div>
+<div class="container blog-section">
+    <div class="section-header" id="blogHeader"></div>
+    <div class="blog-grid" id="blogGrid"></div>
+</div>
+<div class="container faq-section">
+    <div class="section-header" id="faqHeader"></div>
+    <div class="faq-grid" id="faqGrid"></div>
+</div>
+<div class="container contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <span class="tag" id="contactTag"></span>
+            <h2 class="section-title-left" id="contactTitle"></h2>
+            <p id="contactDesc"></p>
+            <div class="address-box" id="addressBox"></div>
+            <div class="social-links-footer" id="footerSocials"></div>
+        </div>
+        <div class="contact-form-full">
+            <form id="contactForm" onsubmit="return submitContactForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email Address" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select id="service"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary"></button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-content" id="footerCols"></div><div class="footer-bottom" id="footerBottom"></div></footer>
+</body></html>

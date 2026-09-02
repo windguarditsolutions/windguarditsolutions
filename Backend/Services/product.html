@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - windguard IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/other.css">
+    <link rel="icon" type="image/png" href="../img/tab_icon.png">
+    <script src="../js/otherscript.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+        <a href="index.html">
+        <img src="../img/icon.png" alt="windguard IT Solutions" class="logo-img">
+        <span class="logo-text">windguard IT<span> Solutions</span></span>
+    </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../Frontend/index.html">Home</a></li>
+            <li><a href="../Services/services.html">Services</a></li>
+            <li><a href="../Services/product.html">Products</a></li>
+            <li><a href="../Services/portfolio.html">Portfolio</a></li>
+            <li><a href="../about/contact.html">Contact</a></li>
+            <li><a href="../login/login.html" class="btn-login">Sign In</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-container">
+        <h1>Our Products</h1>
+        <p>Ready-to-use software solutions for Indian businesses</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3>Billing Software Pro</h3>
+            <p>Complete billing and invoicing solution for Indian GST compliance. Generate invoices, track payments, manage customers.</p>
+            <ul>
+                <li>GST Billing & Invoicing</li>
+                <li>Payment Tracking</li>
+                <li>Customer Management</li>
+                <li>Financial Reports</li>
+            </ul>
+            <div class="product-price">₹6,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('Billing Software Pro', 9999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-boxes"></i>
+            </div>
+            <h3>Inventory Management System</h3>
+            <p>Track stock, manage suppliers, generate purchase orders, and get low stock alerts. Perfect for retail and manufacturing.</p>
+            <ul>
+                <li>Stock Tracking</li>
+                <li>Supplier Management</li>
+                <li>Purchase Orders</li>
+                <li>Low Stock Alerts</li>
+            </ul>
+            <div class="product-price">₹9,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('Inventory Management System', 9999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-school"></i>
+            </div>
+            <h3>School Management ERP</h3>
+            <p>Complete school management system with fees management, attendance tracking, examination results, and parent portal.</p>
+            <ul>
+                <li>Fees Management</li>
+                <li>Attendance Tracking</li>
+                <li>Examination Results</li>
+                <li>Parent Portal</li>
+            </ul>
+            <div class="product-price">₹12,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('School Management ERP', 12999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-hospital-user"></i>
+            </div>
+            <h3>Hospital Management System</h3>
+            <p>Manage patient records, appointments, billing, and pharmacy inventory. Ideal for clinics and hospitals.</p>
+            <ul>
+                <li>Patient Records</li>
+                <li>Appointment Scheduling</li>
+                <li>Billing & Insurance</li>
+                <li>Pharmacy Management</li>
+            </ul>
+            <div class="product-price">₹13,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('Hospital Management System', 13999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Coaching Institute ERP</h3>
+            <p>Manage batches, student enrollment, fees, attendance, and exam results for coaching centers and tutorials.</p>
+            <ul>
+                <li>Batch Management</li>
+                <li>Student Enrollment</li>
+                <li>Fees Collection</li>
+                <li>Exam Results</li>
+            </ul>
+            <div class="product-price">₹4,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('Coaching Institute ERP', 4999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-truck"></i>
+            </div>
+            <h3>Logistics Management Software</h3>
+            <p>Track shipments, manage fleet, generate waybills, and monitor delivery status in real-time.</p>
+            <ul>
+                <li>Shipment Tracking</li>
+                <li>Fleet Management</li>
+                <li>Waybill Generation</li>
+                <li>Real-time Status</li>
+            </ul>
+            <div class="product-price">₹18,999 <span>one-time</span></div>
+            <button class="btn btn-primary" onclick="addToCart('Logistics Management Software', 18999)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </div>
+    <div class="checkout-note">
+        <p><i class="fas fa-lock"></i> Secure checkout. Login required to complete purchase.</p>
+        <a href="../login/login.html" class="btn btn-outline">Login to Checkout <i class="fas fa-arrow-right"></i></a>
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>windguard IT<span> Solutions</h4>
+            <p>Professional IT solutions provider in Noida since 2024.</p>
+            <div class="footer-social">
+                
+                <a href="https://www.linkedin.com/company/windguard-it-solutions/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="../../Frontend/index.html">Home</a>
+            <a href="../Services/services.html">Services</a>
+            <a href="../Services/product.html">Products</a>
+            <a href="../Services/portfolio.html">Portfolio</a>
+            <a href="../about/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="../Services/privacy.html">Privacy Policy</a>
+            <a href="../privacy/terms.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-map-marker-alt"></i> B-45, Sector 63, Noida</p>
+           
+            <p><i class="fas fa-envelope"></i> windguarditsolutions@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 windguard IT<span> Solutions. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
