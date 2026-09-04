@@ -203,101 +203,76 @@ const webDatabase = {
                 bg:
                     "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
                 icon:
-                    "https://www.clipartmax.com/png/full/143-1438715_native-ios-android-apps-android-apple-icon-png.png",
-
+                    "https://www.nicepng.com/png/full/259-2592669_ios-android-icon-png-clip-art-free-ios.png",
                 title:
                     "Mobile App Development",
-
                 desc:
                     "Reach your customers on the go with powerful mobile apps for Android and iOS using Flutter, React Native, Kotlin, and Swift.",
-
                 points: [
                     "Android & iOS Apps",
                     "Hybrid & Cross-Platform",
                     "App Store Optimization",
                     "Maintenance & Support"
                 ],
-
                 url:
                     "../../Backend/offer/android-app.html"
             },
-
             {
                 bg:
-                    "https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931a15f401dad1b39a0f4d_66b0929089fba41bd4d2474d_How-to-Convert-Website-to-Android-App.jpeg",
-
+                    "https://aoplweb.com/wp-content/uploads/2024/01/HD-wallpaper-digital-marketing-consulting-services-strait-web-solutions-seo-marketing.jpg",
                 icon:
                     "https://png.pngtree.com/png-clipart/20250428/original/pngtree-d-isolated-render-of-an-seo-icon-with-a-high-quality-png-image_20809047.png",
-
                 title:
                     "SEO & Digital Marketing",
-
                 desc:
                     "Get found on Google! Our SEO experts help you rank higher in search results and drive organic traffic.",
-
                 points: [
                     "Local SEO & Google Maps",
                     "On-Page & Off-Page SEO",
                     "Google Ads & Social Media",
                     "Content Marketing"
                 ],
-
                 url:
                     "../../Backend/offer/SEO.html"
             },
-
             {
                 bg:
                     "https://img.magnific.com/free-vector/web-development-isometric-concept-composition-illustration_1284-55922.jpg?semt=ais_hybrid&w=740&q=80",
-
                 icon:
                     "https://cdn-icons-png.flaticon.com/512/11765/11765112.png",
-
                 title:
                     "Custom Software Development",
-
                 desc:
                     "Tailor-made software solutions for your unique business needs including inventory, billing, and ERP systems.",
-
                 points: [
                     "Windows Desktop Applications",
                     "Utility & Productivity Tools",
                     "Billing & Accounting Software",
                     "ERP & Business Automation"
                 ],
-
                 url:
                     "../../Backend/offer/software.html"
             }
         ]
     },
     whyChooseUs: {
-
         tag:
             "Why Choose Us",
-
         title:
             "What Makes windguard IT Solutions Different",
-
         desc:
             "We don't just write code – we build business solutions that deliver measurable results.",
-
         image:
             "https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_640.jpg",
-
         items: [
-
             {
                 icon:
                     "fas fa-users",
-
                 title:
                     "100% Indian Team",
-
                 desc:
                     "Local team based in Noida who understands Indian business culture."
             },
-
             {
                 icon:
                     "fas fa-rupee-sign",
