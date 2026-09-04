@@ -203,7 +203,7 @@ const webDatabase = {
                 bg:
                     "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
                 icon:
-                    "https://www.pngkey.com/png/detail/129-1290553_choose-one-of-our-pro-kits-today-to.png",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-E532pPuFGRh3lfKAgvNv4PlEoMXwCuP6_szmvgLi-Q&s=10",
                 title:
                     "Mobile App Development",
                 desc:
