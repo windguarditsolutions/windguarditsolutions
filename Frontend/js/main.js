@@ -2051,7 +2051,7 @@ async function submitContactForm(event) {
         }
         window.location.href =
             backendUrl(
-                "feedback/thankyou.html"
+                "https://windguarditsolutions.onrender.com/feedback/thankyou.html"
             );
     } catch (error) {
         console.error(
