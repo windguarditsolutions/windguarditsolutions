@@ -107,7 +107,7 @@ const webDatabase = {
         socials: [
             {
                 type: "whatsapp",
-                url: "#",
+                url: "https://wa.me/919120984672",
                 target: "_blank",
                 icon: "fab fa-whatsapp",
                 text: "WhatsApp"
