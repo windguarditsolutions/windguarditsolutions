@@ -203,7 +203,7 @@ const webDatabase = {
                 bg:
                     "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
                 icon:
-                    "https://taaruff.com/wp-content/uploads/2019/09/icon-ios-android.png",
+                    "https://www.clipartmax.com/png/full/143-1438715_native-ios-android-apps-android-apple-icon-png.png",
 
                 title:
                     "Mobile App Development",
@@ -224,7 +224,7 @@ const webDatabase = {
 
             {
                 bg:
-                    "https://reyyyworks.in/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-07-at-11.05.50-PM.jpeg",
+                    "https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931a15f401dad1b39a0f4d_66b0929089fba41bd4d2474d_How-to-Convert-Website-to-Android-App.jpeg",
 
                 icon:
                     "https://png.pngtree.com/png-clipart/20250428/original/pngtree-d-isolated-render-of-an-seo-icon-with-a-high-quality-png-image_20809047.png",
