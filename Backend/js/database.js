@@ -8,14 +8,11 @@ const webDatabase = {
         author: "windguard IT Solutions",
         favicon: "../../Backend/img/tab_icon.png"
     },
-
     companyName: "windguard IT Solutions",
-
     logo: {
         src: "../../Backend/img/icon.png",
         alt: "windguard IT Solutions Logo"
     },
-
     navLinks: [
         {
             text: "Home",
@@ -48,13 +45,10 @@ const webDatabase = {
             isBtn: true
         }
     ],
-
     popup: {
         title: "Welcome to windguard IT Solutions",
-
         desc:
             "Get 20% off on your first project. Limited time offer for Indian businesses.",
-
         buttons: [
             {
                 text: "View Services",
@@ -66,19 +60,14 @@ const webDatabase = {
             }
         ]
     },
-
     hero: {
         title:
             "Professional IT Solutions <br>for Your <span class='highlight'>Business Growth</span>",
-
         desc:
             "We deliver high-quality web applications, mobile apps, custom software, and SEO services. 10+ years of experience, 500+ projects delivered for Indian businesses.",
-
         videoSrc:
             "../../Backend/img/video/hero.mp4",
-
         isVideoPlaying: true,
-
         buttons: [
             {
                 text: "Explore Services",
@@ -86,42 +75,35 @@ const webDatabase = {
                 class: "btn btn-primary",
                 icon: "fas fa-arrow-right"
             },
-
             {
                 text: "Get Free Quote",
                 url: "../../Backend/about/contact.html",
                 class: "btn btn-outline"
             },
-
             {
                 text: "Employment verification",
                 url: "../../Backend/about/emp_verify.html",
                 class: "btn btn-outline"
             }
         ],
-
         stats: [
             {
                 value: "500+",
                 label: "Projects Delivered"
             },
-
             {
                 value: "480+",
                 label: "Happy Clients"
             },
-
             {
                 value: "10+",
                 label: "Years Experience"
             },
-
             {
                 value: "24/7",
                 label: "Support"
             }
         ],
-
         socials: [
             {
                 type: "whatsapp",
@@ -130,7 +112,6 @@ const webDatabase = {
                 icon: "fab fa-whatsapp",
                 text: "WhatsApp"
             },
-
             {
                 type: "linkedin",
                 url:
@@ -141,36 +122,30 @@ const webDatabase = {
             }
         ]
     },
-
     clients: {
         title:
             "Trusted by 50+ Indian Businesses",
-
         logos: [
             {
                 src:
                     "https://img.magnific.com/premium-vector/blue-red-medical-logo-with-red-cross-it_1242616-858.jpg?semt=ais_hybrid&w=740&q=80",
                 alt: "healthcare"
             },
-
             {
                 src:
                     "https://img.freepik.com/free-vector/vector-education-logo_779267-2080.jpg",
                 alt: "Education"
             },
-
             {
                 src:
                     "https://img.pikbest.com/png-images/ecommerce-logo-vector-graphics-element--e-commerce-logo-icon-design-online-store-logo-icon_1726010.png!sw800",
                 alt: "e-commerce"
             },
-
             {
                 src:
                     "https://static.vecteezy.com/system/resources/thumbnails/043/211/219/small/a-sleek-and-minimalistic-logo-featuring-a-blue-and-white-house-design-design-a-sleek-and-minimalist-logo-for-a-virtual-event-platform-free-vector.jpg",
                 alt: "minimalistic"
             },
-
             {
                 src:
                     "https://img.freepik.com/premium-vector/beauty-logo-design-vector_67715-523.jpg",
@@ -178,76 +153,55 @@ const webDatabase = {
             }
         ]
     },
-
     about: {
         image:
             "https://t3.ftcdn.net/jpg/18/58/29/12/360_F_1858291272_nVRhKZ4l8zsVzzGIOjwwmmiyU7KVPtMF.jpg",
-
         badge: "10+ Years",
-
         tag: "About Us",
-
         title:
             "India's Leading IT Company in Noida",
-
         paragraphs: [
             "windguard IT Solutions is a premium IT company based in <strong>Noida, Sector 63</strong>, delivering high-quality web and mobile solutions since 2015. We specialize in creating custom software, web applications, mobile apps, and SEO services for Indian businesses, startups, and enterprises.",
-
             "Our team of 30+ experienced developers, designers, and digital marketers work from our Noida office to serve clients across India and globally. We understand the Indian market, local business needs, and deliver solutions that actually work."
         ],
-
         features: [
             "100% Indian Team",
             "Affordable Pricing",
             "On-Time Delivery",
             "Free Lifetime Support"
         ],
-
         btnText:
             "Read More About Us",
-
         btnUrl:
             "../../Backend/about/about.html"
     },
-
     services: {
         tag: "Our Services",
-
         title: "What We Offer",
-
         subtitle:
             "End-to-end IT solutions for modern businesses",
-
         list: [
-
             {
                 bg:
                     "https://images.pexels.com/photos/12899188/pexels-photo-12899188.jpeg?cs=srgb&dl=pexels-mizunokozuki-12899188.jpg&fm=jpg",
-
                 icon:
                     "https://cdn.pixabay.com/photo/2015/05/19/07/44/browser-773215_1280.png",
-
                 title:
                     "Web Application Development",
-
                 desc:
                     "We build scalable, secure, and high-performance web applications using modern technologies like React, Angular, Node.js, Python, and PHP.",
-
                 points: [
                     "E-commerce Websites",
                     "Business Portals & CRM",
                     "API Development & Integration",
                     "Cloud-Based Applications"
                 ],
-
                 url:
                     "../../Backend/offer/offer-blog.html"
             },
-
             {
                 bg:
                     "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
-
                 icon:
                     "https://taaruff.com/wp-content/uploads/2019/09/icon-ios-android.png",
 
@@ -317,11 +271,6 @@ const webDatabase = {
             }
         ]
     },
-
-    // =========================================================
-    // WHY CHOOSE US
-    // =========================================================
-
     whyChooseUs: {
 
         tag:
@@ -383,16 +332,9 @@ const webDatabase = {
             }
         ]
     },
-
-    // =========================================================
-    // PORTFOLIO
-    // =========================================================
-
     portfolio: {
-
         tag:
             "Our Work",
-
         title:
             "Recent Projects",
 
@@ -495,79 +437,51 @@ const webDatabase = {
             {
                 name:
                     "HarshDeep Singh",
-
                 role:
                     "Founder, FashionHub Noida",
-
                 feedback:
                     "windguard IT Solutions built our e-commerce website. Excellent work, on time, and within budget. Highly recommended for Indian businesses looking for quality IT services.",
-
                 stars:
                     5,
-
                 img:
-                    "../../Backend/img/client1.png"
+                    "https://img.magnific.com/free-photo/indian-man-city-male-traditional-turban-hinduist-summer-city_1157-41023.jpg?semt=ais_hybrid&w=740&q=80"
             },
-
             {
                 name:
                     "monika",
-
                 role:
                     "Owner, Beauty cave Noida",
-
                 feedback:
                     "Their mobile app development team is fantastic. Our Beauty product delivery app is getting great reviews on Play Store. The team understood our requirements perfectly.",
-
                 stars:
                     4,
-
                 img:
-                    "../../Backend/img/client2.png"
+                    "https://cdn.pixabay.com/photo/2021/02/03/09/44/portrait-5977311_1280.jpg"
             },
-
             {
                 name:
                     "Hammza mirr",
-
                 role:
                     "Director, Hammza Industries",
-
                 feedback:
                     "Best IT company in Noida. We've been using their custom software for 2 years - zero issues, great support, and very responsive team. Worth every rupee.",
-
                 stars:
                     5,
-
                 img:
-                    "../../Backend/img/client3.png"
+                    "https://t4.ftcdn.net/jpg/04/02/15/79/360_F_402157924_KeEL938KdDIGUhZ4xoznrPU40YnMPLla.jpg"
             }
         ]
     },
-
-    // =========================================================
-    // CTA
-    // =========================================================
-
     cta: {
-
         title:
             "Ready to Start Your Project?",
-
         desc:
             "Let's discuss your requirements. Get a free quote today.",
-
         contactUrl:
             "../../Backend/about/contact.html",
-
         email:
             "windguarditsolutions@gmail.com"
     },
-
-    // =========================================================
-    // BLOG
-    // =========================================================
-
     blog: {
 
         tag:
@@ -732,42 +646,32 @@ const webDatabase = {
             "Custom Software",
             "Other"
         ],
-
         socials: [
-
             {
                 icon:
                     "fab fa-linkedin-in",
-
                 url:
                     "https://www.linkedin.com/company/windguard-it-solutions/?viewAsMember=true"
             },
-
             {
                 icon:
                     "fab fa-facebook-f",
-
                 url:
                     "#"
             },
-
             {
                 icon:
                     "fab fa-instagram",
-
                 url:
                     "#"
             },
-
             {
                 icon:
                     "fab fa-twitter",
-
                 url:
                     "#"
             }
         ]
     }
 };
-
 module.exports = webDatabase;
