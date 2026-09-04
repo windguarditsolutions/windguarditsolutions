@@ -1,5 +1,5 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzW2HZasraDWvt8CAfLwKJkGMqfQSOnThP1JOsAlaorhy2a5Tyb0mkbsgzm3lJJBvk/exec";
-const REDIRECT_URL = "../../Frontend/index.html";
+const REDIRECT_URL = "https://windguarditsolution.onrender.com";
 function toggle(){
   const r = document.getElementById('registerBox');
   const l = document.getElementById('loginBox');
@@ -68,7 +68,7 @@ function login(){
     msg.innerText = d.message;
     if(d.status === "success"){
       setTimeout(()=>{
-        window.location.href = "../../Frontend/index.html";
+        window.location.href = "https://windguarditsolution.onrender.com";
       }, 800);
     }
   })
