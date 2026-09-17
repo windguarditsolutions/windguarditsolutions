@@ -1,5 +1,4 @@
-const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxRFwdy5WBHZvu5tSsxy2WYsZI7qFUOcEiZBZSHwwsVMhnvA7svgSO7s0hhMeCfupzf/exec
-"; 
+const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxRFwdy5WBHZvu5tSsxy2WYsZI7qFUOcEiZBZSHwwsVMhnvA7svgSO7s0hhMeCfupzf/exec";
 document.getElementById("verificationForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const btn = document.getElementById("btnVerify");
@@ -17,14 +16,16 @@ document.getElementById("verificationForm").addEventListener("submit", function(
     statusMsg.className = "status-alert-heading";
     statusMsg.innerText = "";
     const payload = {
-        empId: document.getElementById("empId").value,
-        empName: document.getElementById("empName").value,
+        empId: document.getElementById("empId").value.trim(),
+        empName: document.getElementById("empName").value.trim(),
         empRole: document.getElementById("empRole").value
     };
     fetch(GOOGLE_APP_SCRIPT_URL, {
         method: "POST",
         mode: "cors",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
         body: JSON.stringify(payload)
     })
     .then(response => response.json())
