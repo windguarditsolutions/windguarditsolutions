@@ -1,4 +1,5 @@
-const GOOGLE_APP_SCRIPT_URL = "YOUR_WEB_APP_URL_HERE"; 
+const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxRFwdy5WBHZvu5tSsxy2WYsZI7qFUOcEiZBZSHwwsVMhnvA7svgSO7s0hhMeCfupzf/exec
+"; 
 document.getElementById("verificationForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const btn = document.getElementById("btnVerify");
